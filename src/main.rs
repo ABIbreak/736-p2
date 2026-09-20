@@ -3,6 +3,7 @@ use std::num::NonZeroUsize;
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::SeqCst;
 use std::time::{Duration, Instant};
+use std::process;
 use clap::Parser;
 use nix::unistd::{ForkResult, fork};
 use nix::sys::mman::{MapFlags, mmap_anonymous, ProtFlags};
@@ -11,6 +12,8 @@ const MESSAGE: [u8; 512 * 1024] = [67; 512 * 1024];
 
 #[derive(Parser)]
 struct Cli {
+    #[arg(short, long, default_value = "0")]
+    warmup_repetitions: usize,
     #[arg(short, long, default_value = "1")]
     repetitions: usize,
     #[arg(short, long, default_value = "1024")]
@@ -35,13 +38,14 @@ fn main() {
 
     match unsafe { fork() } {
         Ok(ForkResult::Parent { child }) => {
+            println!("parent id pid {}", process::id());
             println!("child is pid {}", child);
-            for (i, time) in pusher(writer, ack, cli.repetitions, cli.message_size).iter().enumerate() {
+            for (i, time) in pusher(writer, ack, cli.warmup_repetitions, cli.repetitions, cli.message_size).iter().enumerate() {
                 println!("{}: {} us ({} ns)", i, time.as_micros(), time.as_nanos());
             }
         },
         Ok(ForkResult::Child) => {
-            puller(reader, ack, cli.repetitions, cli.message_size);
+            puller(reader, ack, cli.warmup_repetitions, cli.repetitions, cli.message_size);
         },
         Err(_) => println!("fork failed!")
     }
@@ -50,12 +54,13 @@ fn main() {
 fn pusher(
     mut writer: PipeWriter,
     ack: &mut AtomicBool,
+    warmup_repetitions: usize,
     repetitions: usize,
     message_size: usize,
 ) -> Vec<Duration> {
     let mut timing = Vec::with_capacity(repetitions);
 
-    for i in 0..repetitions {
+    for i in 0..(warmup_repetitions + repetitions) {
         //println!("parent iter {}", i);
         let start = Instant::now();
 
@@ -67,7 +72,9 @@ fn pusher(
         while !ack.load(SeqCst) {
             std::hint::spin_loop();
         }
-        timing.push(Instant::now() - start);
+        if i >= warmup_repetitions {
+            timing.push(Instant::now() - start);
+        }
         ack.store(false, SeqCst);
     }
 
@@ -77,10 +84,11 @@ fn pusher(
 fn puller(
     mut reader: PipeReader,
     ack: &mut AtomicBool,
+    warmup_repetitions: usize,
     repetitions: usize,
     message_size: usize,
 ) {
-    for i in 0..repetitions {
+    for i in 0..(warmup_repetitions + repetitions) {
         //println!("child iter {}", i);
         let mut message = vec![0_u8; message_size];
 
