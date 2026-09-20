@@ -1,0 +1,2821 @@
+# tracer: function_graph
+#
+# CPU  DURATION                  FUNCTION CALLS
+# |     |   |                     |   |   |   |
+ 52)               |  pipe_read() {
+ 52)               |    mutex_lock() {
+ 52)               |      __cond_resched() {
+ 52)   0.582 us    |        rcu_all_qs();
+ 52)   1.938 us    |      }
+ 52)   3.469 us    |    }
+ 52)               |    __cond_resched() {
+ 52)   0.517 us    |      rcu_all_qs();
+ 52)   1.550 us    |    }
+ 52)   0.574 us    |    anon_pipe_buf_release();
+ 52)   0.524 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.516 us    |      rcu_all_qs();
+ 52)   1.540 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.531 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.517 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   5.791 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.555 us    |                propagate_protected_usage();
+ 52)   1.582 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.561 us    |                propagate_protected_usage();
+ 52)   1.587 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.522 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.545 us    |                propagate_protected_usage();
+ 52)   1.579 us    |              }
+ 52)   8.841 us    |            }
+ 52)   0.512 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.529 us    |              cgroup_rstat_updated();
+ 52)   1.616 us    |            }
+ 52)   0.514 us    |            memcg_check_events();
+ 52)   0.540 us    |            rcu_read_unlock_strict();
+ 52) + 15.276 us   |          }
+ 52) + 22.639 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.583 us    |          free_pcp_prepare();
+ 52)   0.642 us    |          free_unref_page_commit.constprop.0();
+ 52)   3.112 us    |        }
+ 52) + 28.418 us   |      }
+ 52) + 29.690 us   |    }
+ 52)   0.526 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.515 us    |      rcu_all_qs();
+ 52)   1.617 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.525 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   5.622 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.545 us    |                propagate_protected_usage();
+ 52)   1.567 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.545 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.538 us    |                propagate_protected_usage();
+ 52)   1.564 us    |              }
+ 52)   8.774 us    |            }
+ 52)   0.512 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.545 us    |              cgroup_rstat_updated();
+ 52)   2.140 us    |            }
+ 52)   0.558 us    |            memcg_check_events();
+ 52)   0.540 us    |            rcu_read_unlock_strict();
+ 52) + 15.604 us   |          }
+ 52) + 23.009 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.558 us    |          free_pcp_prepare();
+ 52)   0.560 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.682 us    |        }
+ 52) + 28.213 us   |      }
+ 52) + 29.351 us   |    }
+ 52)   0.551 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.513 us    |      rcu_all_qs();
+ 52)   1.530 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.522 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.517 us    |            rcu_read_unlock_strict();
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.569 us    |            rcu_read_unlock_strict();
+ 52)   5.699 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.548 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.585 us    |                propagate_protected_usage();
+ 52)   1.605 us    |              }
+ 52)   8.794 us    |            }
+ 52)   0.513 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.545 us    |              cgroup_rstat_updated();
+ 52)   1.613 us    |            }
+ 52)   0.534 us    |            memcg_check_events();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52) + 15.087 us   |          }
+ 52) + 22.313 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.534 us    |          free_pcp_prepare();
+ 52)   0.535 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.660 us    |        }
+ 52) + 27.514 us   |      }
+ 52) + 28.705 us   |    }
+ 52)   0.524 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.513 us    |      rcu_all_qs();
+ 52)   1.530 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.524 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   5.628 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.546 us    |                propagate_protected_usage();
+ 52)   1.571 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.522 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.546 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.538 us    |                propagate_protected_usage();
+ 52)   1.564 us    |              }
+ 52)   8.791 us    |            }
+ 52)   0.788 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.523 us    |              cgroup_rstat_updated();
+ 52)   1.573 us    |            }
+ 52)   0.517 us    |            memcg_check_events();
+ 52)   0.518 us    |            rcu_read_unlock_strict();
+ 52) + 15.732 us   |          }
+ 52) + 22.881 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.531 us    |          free_pcp_prepare();
+ 52)   0.516 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.616 us    |        }
+ 52) + 28.016 us   |      }
+ 52) + 29.155 us   |    }
+ 52)   0.525 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.515 us    |      rcu_all_qs();
+ 52)   1.508 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.526 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   5.625 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.545 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.548 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.537 us    |                propagate_protected_usage();
+ 52)   1.561 us    |              }
+ 52)   8.744 us    |            }
+ 52)   0.514 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.521 us    |              cgroup_rstat_updated();
+ 52)   1.563 us    |            }
+ 52)   0.509 us    |            memcg_check_events();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52) + 14.949 us   |          }
+ 52) + 22.098 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.590 us    |          free_pcp_prepare();
+ 52)   0.532 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.669 us    |        }
+ 52) + 27.286 us   |      }
+ 52) + 28.419 us   |    }
+ 52)   0.525 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.514 us    |      rcu_all_qs();
+ 52)   1.512 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.524 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   5.619 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.545 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.546 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.548 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.546 us    |                propagate_protected_usage();
+ 52)   1.941 us    |              }
+ 52)   9.118 us    |            }
+ 52)   0.511 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.521 us    |              cgroup_rstat_updated();
+ 52)   1.567 us    |            }
+ 52)   0.516 us    |            memcg_check_events();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52) + 15.299 us   |          }
+ 52) + 22.435 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.532 us    |          free_pcp_prepare();
+ 52)   0.519 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.648 us    |        }
+ 52) + 27.600 us   |      }
+ 52) + 28.744 us   |    }
+ 52)   0.526 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.512 us    |      rcu_all_qs();
+ 52)   1.532 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.522 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.517 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.517 us    |            rcu_read_unlock_strict();
+ 52)   5.626 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.519 us    |                propagate_protected_usage();
+ 52)   1.543 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.542 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.536 us    |                propagate_protected_usage();
+ 52)   1.566 us    |              }
+ 52)   8.722 us    |            }
+ 52)   0.511 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.522 us    |              cgroup_rstat_updated();
+ 52)   1.568 us    |            }
+ 52)   0.516 us    |            memcg_check_events();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52) + 14.902 us   |          }
+ 52) + 22.049 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.532 us    |          free_pcp_prepare();
+ 52)   0.532 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.610 us    |        }
+ 52) + 27.173 us   |      }
+ 52) + 28.364 us   |    }
+ 52)   0.525 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.512 us    |      rcu_all_qs();
+ 52)   1.505 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.522 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.518 us    |            rcu_read_unlock_strict();
+ 52)   0.567 us    |            rcu_read_unlock_strict();
+ 52)   5.677 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.519 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.548 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.546 us    |                propagate_protected_usage();
+ 52)   1.753 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.539 us    |                propagate_protected_usage();
+ 52)   1.572 us    |              }
+ 52)   8.964 us    |            }
+ 52)   0.516 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.521 us    |              cgroup_rstat_updated();
+ 52)   1.566 us    |            }
+ 52)   0.515 us    |            memcg_check_events();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52) + 15.244 us   |          }
+ 52) + 22.442 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.531 us    |          free_pcp_prepare();
+ 52)   0.522 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.613 us    |        }
+ 52) + 27.571 us   |      }
+ 52) + 28.716 us   |    }
+ 52)   0.526 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.514 us    |      rcu_all_qs();
+ 52)   1.530 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.525 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   5.626 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.519 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.519 us    |                propagate_protected_usage();
+ 52)   1.600 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.541 us    |                propagate_protected_usage();
+ 52)   1.564 us    |              }
+ 52)   8.776 us    |            }
+ 52)   0.514 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.521 us    |              cgroup_rstat_updated();
+ 52)   1.568 us    |            }
+ 52)   0.514 us    |            memcg_check_events();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52) + 14.932 us   |          }
+ 52) + 22.082 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.562 us    |          free_pcp_prepare();
+ 52)   0.531 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.637 us    |        }
+ 52) + 27.232 us   |      }
+ 52) + 28.368 us   |    }
+ 52)   0.526 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.516 us    |      rcu_all_qs();
+ 52)   1.533 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.527 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   5.618 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.548 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.544 us    |                propagate_protected_usage();
+ 52)   1.961 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.544 us    |                propagate_protected_usage();
+ 52)   1.603 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.539 us    |              }
+ 52)   9.218 us    |            }
+ 52)   0.515 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.545 us    |              cgroup_rstat_updated();
+ 52)   1.571 us    |            }
+ 52)   0.518 us    |            memcg_check_events();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52) + 15.404 us   |          }
+ 52) + 22.541 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.532 us    |          free_pcp_prepare();
+ 52)   0.535 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.613 us    |        }
+ 52) + 27.671 us   |      }
+ 52) + 28.819 us   |    }
+ 52)   0.525 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.513 us    |      rcu_all_qs();
+ 52)   1.505 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.524 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   5.623 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.543 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.548 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.522 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.538 us    |                propagate_protected_usage();
+ 52)   1.564 us    |              }
+ 52)   8.722 us    |            }
+ 52)   0.512 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.524 us    |              cgroup_rstat_updated();
+ 52)   1.567 us    |            }
+ 52)   0.513 us    |            memcg_check_events();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52) + 14.955 us   |          }
+ 52) + 22.099 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.541 us    |          free_pcp_prepare();
+ 52)   0.532 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.621 us    |        }
+ 52) + 27.235 us   |      }
+ 52) + 28.377 us   |    }
+ 52)   0.525 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.513 us    |      rcu_all_qs();
+ 52)   1.533 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.528 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.517 us    |            rcu_read_unlock_strict();
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   0.519 us    |            rcu_read_unlock_strict();
+ 52)   5.630 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.549 us    |                propagate_protected_usage();
+ 52)   1.820 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.547 us    |                propagate_protected_usage();
+ 52)   1.572 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.546 us    |                propagate_protected_usage();
+ 52)   1.571 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.543 us    |              }
+ 52)   9.119 us    |            }
+ 52)   0.514 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.522 us    |              cgroup_rstat_updated();
+ 52)   1.570 us    |            }
+ 52)   0.514 us    |            memcg_check_events();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52) + 15.276 us   |          }
+ 52) + 22.424 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.535 us    |          free_pcp_prepare();
+ 52)   0.536 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.663 us    |        }
+ 52) + 27.608 us   |      }
+ 52) + 28.745 us   |    }
+ 52)   0.525 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.513 us    |      rcu_all_qs();
+ 52)   1.508 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.522 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   5.616 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.547 us    |                propagate_protected_usage();
+ 52)   1.574 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.547 us    |                propagate_protected_usage();
+ 52)   1.574 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.537 us    |                propagate_protected_usage();
+ 52)   1.564 us    |              }
+ 52)   8.817 us    |            }
+ 52)   0.515 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.524 us    |              cgroup_rstat_updated();
+ 52)   1.564 us    |            }
+ 52)   0.511 us    |            memcg_check_events();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52) + 14.999 us   |          }
+ 52) + 22.133 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.535 us    |          free_pcp_prepare();
+ 52)   0.533 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.610 us    |        }
+ 52) + 27.261 us   |      }
+ 52) + 28.406 us   |    }
+ 52)   0.526 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.514 us    |      rcu_all_qs();
+ 52)   1.530 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.578 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.517 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   5.879 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.519 us    |                propagate_protected_usage();
+ 52)   1.575 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.540 us    |                propagate_protected_usage();
+ 52)   1.569 us    |              }
+ 52)   8.774 us    |            }
+ 52)   0.511 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.525 us    |              cgroup_rstat_updated();
+ 52)   1.571 us    |            }
+ 52)   0.516 us    |            memcg_check_events();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52) + 14.930 us   |          }
+ 52) + 22.329 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.533 us    |          free_pcp_prepare();
+ 52)   0.538 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.610 us    |        }
+ 52) + 27.531 us   |      }
+ 52) + 28.554 us   |    }
+ 52)   0.525 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.512 us    |      rcu_all_qs();
+ 52)   1.527 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.523 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52)   5.626 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.546 us    |                propagate_protected_usage();
+ 52)   1.571 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.520 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.540 us    |                propagate_protected_usage();
+ 52)   1.564 us    |              }
+ 52)   8.773 us    |            }
+ 52)   0.511 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.525 us    |              cgroup_rstat_updated();
+ 52)   1.568 us    |            }
+ 52)   0.514 us    |            memcg_check_events();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52) + 14.950 us   |          }
+ 52) + 22.149 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.530 us    |          free_pcp_prepare();
+ 52)   0.532 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.609 us    |        }
+ 52) + 27.274 us   |      }
+ 52) + 28.415 us   |    }
+ 52)   0.526 us    |    _raw_spin_lock_irq();
+ 52)   0.521 us    |    mutex_unlock();
+ 52)               |    __wake_up_sync_key() {
+ 52)               |      __wake_up_common_lock() {
+ 52)   0.528 us    |        _raw_spin_lock_irqsave();
+ 52)   0.554 us    |        __wake_up_common();
+ 52)   0.561 us    |        _raw_spin_unlock_irqrestore();
+ 52)   3.719 us    |      }
+ 52)   4.748 us    |    }
+ 52)   0.538 us    |    kill_fasync();
+ 52)               |    touch_atime() {
+ 52)               |      atime_needs_update() {
+ 52)   0.531 us    |        ktime_get_coarse_real_ts64();
+ 52)   0.536 us    |        timestamp_truncate();
+ 52)   2.761 us    |      }
+ 52)   0.573 us    |      __mnt_want_write();
+ 52)   0.524 us    |      ktime_get_coarse_real_ts64();
+ 52)   0.518 us    |      timestamp_truncate();
+ 52)   0.633 us    |      __mark_inode_dirty();
+ 52)   0.517 us    |      __mnt_drop_write();
+ 52)   9.382 us    |    }
+ 52) ! 525.996 us  |  }
+ 52)               |  pipe_read() {
+ 52)               |    mutex_lock() {
+ 52)               |      __cond_resched() {
+ 52)   0.548 us    |        rcu_all_qs();
+ 52)   1.636 us    |      }
+ 52)               |      __mutex_lock_slowpath() {
+ 52)               |        __mutex_lock.constprop.0() {
+ 52)               |          __cond_resched() {
+ 52)   0.504 us    |            rcu_all_qs();
+ 52)   1.518 us    |          }
+ 52)   0.516 us    |          rcu_read_unlock_strict();
+ 52)   0.581 us    |          osq_lock();
+ 52)               |          mutex_spin_on_owner() {
+ 52)   0.516 us    |            rcu_read_unlock_strict();
+ 52) ! 125.546 us  |          }
+ 52)   0.491 us    |          osq_unlock();
+ 52) ! 132.183 us  |        }
+ 52) ! 133.212 us  |      }
+ 52) ! 136.461 us  |    }
+ 52)               |    __cond_resched() {
+ 52)   0.507 us    |      rcu_all_qs();
+ 52)   1.493 us    |    }
+ 52)   0.538 us    |    anon_pipe_buf_release();
+ 52)   0.520 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.512 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.525 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   5.599 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.495 us    |                propagate_protected_usage();
+ 52)   1.579 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.494 us    |                propagate_protected_usage();
+ 52)   1.585 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.494 us    |                propagate_protected_usage();
+ 52)   1.636 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.604 us    |              }
+ 52)   8.927 us    |            }
+ 52)   0.507 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.528 us    |              cgroup_rstat_updated();
+ 52)   1.587 us    |            }
+ 52)   0.515 us    |            memcg_check_events();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52) + 15.172 us   |          }
+ 52) + 22.282 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.536 us    |          free_pcp_prepare();
+ 52)   0.540 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.676 us    |        }
+ 52) + 27.478 us   |      }
+ 52) + 28.597 us   |    }
+ 52)   0.521 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.511 us    |      rcu_all_qs();
+ 52)   1.522 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.514 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   5.593 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.537 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.516 us    |                propagate_protected_usage();
+ 52)   1.538 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.537 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.535 us    |                propagate_protected_usage();
+ 52)   1.555 us    |              }
+ 52)   8.686 us    |            }
+ 52)   0.511 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.518 us    |              cgroup_rstat_updated();
+ 52)   1.556 us    |            }
+ 52)   0.511 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.850 us   |          }
+ 52) + 21.951 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.530 us    |          free_pcp_prepare();
+ 52)   0.521 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.600 us    |        }
+ 52) + 27.232 us   |      }
+ 52) + 28.370 us   |    }
+ 52)   0.521 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.511 us    |      rcu_all_qs();
+ 52)   1.497 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.588 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.537 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.517 us    |                propagate_protected_usage();
+ 52)   1.536 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.535 us    |                propagate_protected_usage();
+ 52)   1.554 us    |              }
+ 52)   8.683 us    |            }
+ 52)   0.511 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.518 us    |              cgroup_rstat_updated();
+ 52)   1.557 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.794 us   |          }
+ 52) + 21.893 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.538 us    |          free_pcp_prepare();
+ 52)   0.526 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.659 us    |        }
+ 52) + 27.053 us   |      }
+ 52) + 28.211 us   |    }
+ 52)   0.525 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.835 us    |      rcu_all_qs();
+ 52)   1.841 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.525 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.521 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.582 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.537 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.538 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.519 us    |                propagate_protected_usage();
+ 52)   1.537 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.536 us    |                propagate_protected_usage();
+ 52)   1.554 us    |              }
+ 52)   8.685 us    |            }
+ 52)   0.508 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.518 us    |              cgroup_rstat_updated();
+ 52)   1.557 us    |            }
+ 52)   0.511 us    |            memcg_check_events();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52) + 14.793 us   |          }
+ 52) + 21.885 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.559 us    |          free_pcp_prepare();
+ 52)   0.534 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.625 us    |        }
+ 52) + 27.040 us   |      }
+ 52) + 28.178 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.511 us    |      rcu_all_qs();
+ 52)   1.500 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   5.588 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.517 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.537 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.536 us    |                propagate_protected_usage();
+ 52)   1.555 us    |              }
+ 52)   8.687 us    |            }
+ 52)   0.509 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.521 us    |              cgroup_rstat_updated();
+ 52)   1.554 us    |            }
+ 52)   0.511 us    |            memcg_check_events();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52) + 14.814 us   |          }
+ 52) + 21.921 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.527 us    |          free_pcp_prepare();
+ 52)   0.527 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.592 us    |        }
+ 52) + 27.011 us   |      }
+ 52) + 28.199 us   |    }
+ 52)   0.531 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.538 us    |      rcu_all_qs();
+ 52)   1.525 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.822 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.551 us    |            rcu_read_unlock_strict();
+ 52)   5.635 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)   8.650 us    |            }
+ 52)   0.502 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.517 us    |              cgroup_rstat_updated();
+ 52)   1.554 us    |            }
+ 52)   0.503 us    |            memcg_check_events();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52) + 14.738 us   |          }
+ 52) + 21.881 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.529 us    |          free_pcp_prepare();
+ 52)   0.524 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.586 us    |        }
+ 52) + 27.249 us   |      }
+ 52) + 28.408 us   |    }
+ 52)   0.513 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.515 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.559 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.565 us    |                propagate_protected_usage();
+ 52)   1.580 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.550 us    |              }
+ 52)   8.710 us    |            }
+ 52)   0.504 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.517 us    |              cgroup_rstat_updated();
+ 52)   1.554 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.798 us   |          }
+ 52) + 21.865 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.562 us    |          free_pcp_prepare();
+ 52)   0.906 us    |          free_unref_page_commit.constprop.0();
+ 52)   3.020 us    |        }
+ 52) + 27.384 us   |      }
+ 52) + 28.532 us   |    }
+ 52)   0.516 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.514 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.516 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   5.569 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)   8.655 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.548 us    |            }
+ 52)   0.505 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.799 us   |          }
+ 52) + 21.877 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.525 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.583 us    |        }
+ 52) + 26.953 us   |      }
+ 52) + 28.076 us   |    }
+ 52)   0.515 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.514 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.520 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   5.572 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.527 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.553 us    |              }
+ 52)   8.664 us    |            }
+ 52)   0.504 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.516 us    |              cgroup_rstat_updated();
+ 52)   1.551 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.778 us   |          }
+ 52) + 21.854 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.578 us    |          free_pcp_prepare();
+ 52)   0.556 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.663 us    |        }
+ 52) + 27.287 us   |      }
+ 52) + 28.420 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.510 us    |      rcu_all_qs();
+ 52)   1.516 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.577 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.527 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.551 us    |              }
+ 52)   8.660 us    |            }
+ 52)   0.504 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.549 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.747 us   |          }
+ 52) + 21.832 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.554 us    |          free_pcp_prepare();
+ 52)   0.528 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.616 us    |        }
+ 52) + 26.941 us   |      }
+ 52) + 28.066 us   |    }
+ 52)   0.511 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.511 us    |      rcu_all_qs();
+ 52)   1.514 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.519 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   5.562 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.526 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.553 us    |              }
+ 52)   8.660 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.551 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 15.107 us   |          }
+ 52) + 22.177 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.529 us    |          free_pcp_prepare();
+ 52)   0.517 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.582 us    |        }
+ 52) + 27.287 us   |      }
+ 52) + 28.366 us   |    }
+ 52)   0.514 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.509 us    |      rcu_all_qs();
+ 52)   1.517 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.558 us    |            rcu_read_unlock_strict();
+ 52)   5.631 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.541 us    |                propagate_protected_usage();
+ 52)   1.555 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.550 us    |              }
+ 52)   8.687 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.514 us    |              cgroup_rstat_updated();
+ 52)   1.553 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52) + 14.801 us   |          }
+ 52) + 21.937 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.527 us    |          free_pcp_prepare();
+ 52)   0.531 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.585 us    |        }
+ 52) + 27.014 us   |      }
+ 52) + 28.089 us   |    }
+ 52)   0.515 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.504 us    |      rcu_all_qs();
+ 52)   1.513 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.574 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.581 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.533 us    |                propagate_protected_usage();
+ 52)   1.549 us    |              }
+ 52)   8.709 us    |            }
+ 52)   0.504 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.785 us    |              cgroup_rstat_updated();
+ 52)   1.841 us    |            }
+ 52)   0.505 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 15.089 us   |          }
+ 52) + 22.176 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.536 us    |          free_pcp_prepare();
+ 52)   0.527 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.586 us    |        }
+ 52) + 27.261 us   |      }
+ 52) + 28.387 us   |    }
+ 52)   0.514 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.509 us    |      rcu_all_qs();
+ 52)   1.514 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.563 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.550 us    |              }
+ 52)   8.661 us    |            }
+ 52)   0.508 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.543 us    |              cgroup_rstat_updated();
+ 52)   1.577 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.832 us   |          }
+ 52) + 21.903 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.526 us    |          free_pcp_prepare();
+ 52)   0.527 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.583 us    |        }
+ 52) + 26.983 us   |      }
+ 52) + 28.109 us   |    }
+ 52)   0.515 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.509 us    |      rcu_all_qs();
+ 52)   1.513 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.520 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   5.570 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.551 us    |              }
+ 52)   8.660 us    |            }
+ 52)   0.506 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.548 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 15.029 us   |          }
+ 52) + 22.111 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.526 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.636 us    |        }
+ 52) + 27.242 us   |      }
+ 52) + 28.378 us   |    }
+ 52)   0.514 us    |    _raw_spin_lock_irq();
+ 52)   0.518 us    |    mutex_unlock();
+ 52)               |    __wake_up_sync_key() {
+ 52)               |      __wake_up_common_lock() {
+ 52)   0.519 us    |        _raw_spin_lock_irqsave();
+ 52)   0.521 us    |        __wake_up_common();
+ 52)   0.507 us    |        _raw_spin_unlock_irqrestore();
+ 52)   3.578 us    |      }
+ 52)   4.584 us    |    }
+ 52)   0.506 us    |    kill_fasync();
+ 52)               |    touch_atime() {
+ 52)               |      atime_needs_update() {
+ 52)   0.525 us    |        ktime_get_coarse_real_ts64();
+ 52)   0.511 us    |        timestamp_truncate();
+ 52)   2.590 us    |      }
+ 52)   3.617 us    |    }
+ 52) ! 644.464 us  |  }
+ 52)               |  pipe_read() {
+ 52)               |    mutex_lock() {
+ 52)               |      __cond_resched() {
+ 52)   0.515 us    |        rcu_all_qs();
+ 52)   1.546 us    |      }
+ 52)               |      __mutex_lock_slowpath() {
+ 52)               |        __mutex_lock.constprop.0() {
+ 52)               |          __cond_resched() {
+ 52)   0.506 us    |            rcu_all_qs();
+ 52)   1.544 us    |          }
+ 52)   0.569 us    |          rcu_read_unlock_strict();
+ 52)   0.613 us    |          osq_lock();
+ 52)               |          mutex_spin_on_owner() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52) ! 123.792 us  |          }
+ 52)   0.488 us    |          osq_unlock();
+ 52) ! 130.319 us  |        }
+ 52) ! 131.384 us  |      }
+ 52) ! 134.510 us  |    }
+ 52)               |    __cond_resched() {
+ 52)   0.509 us    |      rcu_all_qs();
+ 52)   1.494 us    |    }
+ 52)   0.537 us    |    anon_pipe_buf_release();
+ 52)   0.520 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.513 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.515 us    |            rcu_read_unlock_strict();
+ 52)   5.593 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.503 us    |                propagate_protected_usage();
+ 52)   1.538 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.502 us    |                propagate_protected_usage();
+ 52)   1.539 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.502 us    |                propagate_protected_usage();
+ 52)   1.539 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.541 us    |                propagate_protected_usage();
+ 52)   1.572 us    |              }
+ 52)   8.711 us    |            }
+ 52)   0.511 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.575 us    |              cgroup_rstat_updated();
+ 52)   1.600 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52) + 15.249 us   |          }
+ 52) + 22.356 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.527 us    |          free_pcp_prepare();
+ 52)   0.542 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.614 us    |        }
+ 52) + 27.461 us   |      }
+ 52) + 28.590 us   |    }
+ 52)   0.521 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.507 us    |      rcu_all_qs();
+ 52)   1.513 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.569 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.526 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.548 us    |              }
+ 52)   8.653 us    |            }
+ 52)   0.504 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.517 us    |              cgroup_rstat_updated();
+ 52)   1.553 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52) + 14.796 us   |          }
+ 52) + 21.873 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.526 us    |          free_pcp_prepare();
+ 52)   0.518 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.587 us    |        }
+ 52) + 26.953 us   |      }
+ 52) + 28.096 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.505 us    |      rcu_all_qs();
+ 52)   1.518 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.517 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.569 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.537 us    |                propagate_protected_usage();
+ 52)   1.552 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.867 us    |              }
+ 52)   8.996 us    |            }
+ 52)   0.501 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.516 us    |              cgroup_rstat_updated();
+ 52)   1.525 us    |            }
+ 52)   0.510 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 15.122 us   |          }
+ 52) + 22.197 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.528 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.582 us    |        }
+ 52) + 27.291 us   |      }
+ 52) + 28.310 us   |    }
+ 52)   0.516 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.513 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.517 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.505 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.567 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.527 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.576 us    |              }
+ 52)   8.675 us    |            }
+ 52)   0.501 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.553 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.763 us   |          }
+ 52) + 21.842 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.535 us    |          free_pcp_prepare();
+ 52)   0.529 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.649 us    |        }
+ 52) + 26.982 us   |      }
+ 52) + 28.095 us   |    }
+ 52)   0.519 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.504 us    |      rcu_all_qs();
+ 52)   1.518 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.517 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.505 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   5.559 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.510 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.863 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)   9.010 us    |            }
+ 52)   0.506 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.517 us    |              cgroup_rstat_updated();
+ 52)   1.549 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52) + 15.098 us   |          }
+ 52) + 22.167 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.527 us    |          free_pcp_prepare();
+ 52)   0.524 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.583 us    |        }
+ 52) + 27.238 us   |      }
+ 52) + 28.360 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.557 us    |      rcu_all_qs();
+ 52)   1.563 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.517 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.570 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.555 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.546 us    |              }
+ 52)   8.680 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.514 us    |              cgroup_rstat_updated();
+ 52)   1.553 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.764 us   |          }
+ 52) + 21.842 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.527 us    |          free_pcp_prepare();
+ 52)   0.526 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.587 us    |        }
+ 52) + 26.923 us   |      }
+ 52) + 28.043 us   |    }
+ 52)   0.519 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.516 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.517 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.562 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.623 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.804 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.549 us    |              }
+ 52)   8.924 us    |            }
+ 52)   0.506 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.547 us    |            }
+ 52)   0.505 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 15.012 us   |          }
+ 52) + 22.142 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.527 us    |          free_pcp_prepare();
+ 52)   0.522 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.584 us    |        }
+ 52) + 27.219 us   |      }
+ 52) + 28.347 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.506 us    |      rcu_all_qs();
+ 52)   1.517 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.517 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.563 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.564 us    |                propagate_protected_usage();
+ 52)   1.579 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.528 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)   8.707 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.514 us    |              cgroup_rstat_updated();
+ 52)   1.550 us    |            }
+ 52)   0.505 us    |            memcg_check_events();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52) + 14.788 us   |          }
+ 52) + 21.861 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.553 us    |          free_pcp_prepare();
+ 52)   0.517 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.612 us    |        }
+ 52) + 26.967 us   |      }
+ 52) + 28.089 us   |    }
+ 52)   0.517 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.513 us    |      rcu_all_qs();
+ 52)   1.521 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.517 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.569 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.834 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.510 us    |                propagate_protected_usage();
+ 52)   1.584 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.550 us    |              }
+ 52)   9.015 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.513 us    |              cgroup_rstat_updated();
+ 52)   1.548 us    |            }
+ 52)   0.506 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 15.102 us   |          }
+ 52) + 22.175 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.526 us    |          free_pcp_prepare();
+ 52)   0.523 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.581 us    |        }
+ 52) + 27.253 us   |      }
+ 52) + 28.393 us   |    }
+ 52)   0.520 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.509 us    |      rcu_all_qs();
+ 52)   1.514 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.505 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.570 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)   8.661 us    |            }
+ 52)   0.506 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.549 us    |            }
+ 52)   0.560 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.802 us   |          }
+ 52) + 21.878 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.529 us    |          free_pcp_prepare();
+ 52)   0.522 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.586 us    |        }
+ 52) + 26.962 us   |      }
+ 52) + 28.089 us   |    }
+ 52)   0.516 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.518 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.520 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   5.560 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.506 us    |                propagate_protected_usage();
+ 52)   1.535 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.547 us    |              }
+ 52)   8.660 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.517 us    |              cgroup_rstat_updated();
+ 52)   1.550 us    |            }
+ 52)   0.502 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.749 us   |          }
+ 52) + 22.079 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.575 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.639 us    |        }
+ 52) + 27.210 us   |      }
+ 52) + 28.350 us   |    }
+ 52)   0.519 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.512 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.520 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.563 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.527 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.533 us    |                propagate_protected_usage();
+ 52)   1.553 us    |              }
+ 52)   8.664 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.519 us    |              cgroup_rstat_updated();
+ 52)   1.553 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.781 us   |          }
+ 52) + 21.876 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.529 us    |          free_pcp_prepare();
+ 52)   0.521 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.583 us    |        }
+ 52) + 26.950 us   |      }
+ 52) + 28.072 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.507 us    |      rcu_all_qs();
+ 52)   1.516 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.568 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.771 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.840 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.526 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.549 us    |              }
+ 52)   8.663 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.517 us    |              cgroup_rstat_updated();
+ 52)   1.549 us    |            }
+ 52)   0.505 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.744 us   |          }
+ 52) + 22.092 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.527 us    |          free_pcp_prepare();
+ 52)   0.515 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.586 us    |        }
+ 52) + 27.228 us   |      }
+ 52) + 28.356 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.514 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.591 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.650 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.549 us    |              }
+ 52)   8.661 us    |            }
+ 52)   0.507 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.551 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.752 us   |          }
+ 52) + 21.910 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.553 us    |          free_pcp_prepare();
+ 52)   0.524 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.607 us    |        }
+ 52) + 27.007 us   |      }
+ 52) + 28.136 us   |    }
+ 52)   0.517 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.510 us    |      rcu_all_qs();
+ 52)   1.518 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.847 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   5.904 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.549 us    |              }
+ 52)   8.661 us    |            }
+ 52)   0.507 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.548 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.505 us    |            rcu_read_unlock_strict();
+ 52) + 14.749 us   |          }
+ 52) + 22.162 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.526 us    |          free_pcp_prepare();
+ 52)   0.526 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.582 us    |        }
+ 52) + 27.260 us   |      }
+ 52) + 28.275 us   |    }
+ 52)   0.520 us    |    _raw_spin_lock_irq();
+ 52)   0.518 us    |    mutex_unlock();
+ 52)               |    __wake_up_sync_key() {
+ 52)               |      __wake_up_common_lock() {
+ 52)   0.520 us    |        _raw_spin_lock_irqsave();
+ 52)   0.524 us    |        __wake_up_common();
+ 52)   0.510 us    |        _raw_spin_unlock_irqrestore();
+ 52)   3.629 us    |      }
+ 52)   4.627 us    |    }
+ 52)   0.505 us    |    kill_fasync();
+ 52)               |    touch_atime() {
+ 52)               |      atime_needs_update() {
+ 52)   0.525 us    |        ktime_get_coarse_real_ts64();
+ 52)   0.514 us    |        timestamp_truncate();
+ 52)   2.591 us    |      }
+ 52)   3.608 us    |    }
+ 52) ! 641.657 us  |  }
+ 52)               |  pipe_read() {
+ 52)               |    mutex_lock() {
+ 52)               |      __cond_resched() {
+ 52)   0.514 us    |        rcu_all_qs();
+ 52)   1.535 us    |      }
+ 52)               |      __mutex_lock_slowpath() {
+ 52)               |        __mutex_lock.constprop.0() {
+ 52)               |          __cond_resched() {
+ 52)   0.511 us    |            rcu_all_qs();
+ 52)   1.518 us    |          }
+ 52)   0.547 us    |          rcu_read_unlock_strict();
+ 52)   0.596 us    |          osq_lock();
+ 52)               |          mutex_spin_on_owner() {
+ 52)   0.536 us    |            rcu_read_unlock_strict();
+ 52) ! 128.839 us  |          }
+ 52)   0.518 us    |          osq_unlock();
+ 52) ! 135.299 us  |        }
+ 52) ! 136.281 us  |      }
+ 52) ! 139.400 us  |    }
+ 52)               |    __cond_resched() {
+ 52)   0.509 us    |      rcu_all_qs();
+ 52)   1.517 us    |    }
+ 52)   0.537 us    |    anon_pipe_buf_release();
+ 52)   0.519 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.513 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.538 us    |            rcu_read_unlock_strict();
+ 52)   0.766 us    |            rcu_read_unlock_strict();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.873 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.491 us    |                propagate_protected_usage();
+ 52)   1.566 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.491 us    |                propagate_protected_usage();
+ 52)   1.579 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.491 us    |                propagate_protected_usage();
+ 52)   1.621 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.521 us    |                propagate_protected_usage();
+ 52)   1.584 us    |              }
+ 52)   8.874 us    |            }
+ 52)   0.501 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.528 us    |              cgroup_rstat_updated();
+ 52)   1.529 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.502 us    |            rcu_read_unlock_strict();
+ 52) + 14.978 us   |          }
+ 52) + 22.358 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.526 us    |          free_pcp_prepare();
+ 52)   0.528 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.600 us    |        }
+ 52) + 27.453 us   |      }
+ 52) + 28.586 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.507 us    |      rcu_all_qs();
+ 52)   1.516 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.537 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   5.692 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.527 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.528 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.548 us    |              }
+ 52)   8.651 us    |            }
+ 52)   0.506 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.512 us    |              cgroup_rstat_updated();
+ 52)   1.553 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.739 us   |          }
+ 52) + 21.941 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.527 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.587 us    |        }
+ 52) + 27.053 us   |      }
+ 52) + 28.066 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.505 us    |      rcu_all_qs();
+ 52)   1.520 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.516 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.807 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.513 us    |            rcu_read_unlock_strict();
+ 52)   5.867 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.531 us    |                propagate_protected_usage();
+ 52)   1.551 us    |              }
+ 52)   8.661 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.514 us    |              cgroup_rstat_updated();
+ 52)   1.554 us    |            }
+ 52)   0.505 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.805 us   |          }
+ 52) + 22.182 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.522 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.585 us    |        }
+ 52) + 27.259 us   |      }
+ 52) + 28.396 us   |    }
+ 52)   0.516 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.518 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.534 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.603 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.534 us    |                propagate_protected_usage();
+ 52)   1.600 us    |              }
+ 52)   8.710 us    |            }
+ 52)   0.506 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.516 us    |              cgroup_rstat_updated();
+ 52)   1.547 us    |            }
+ 52)   0.504 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.800 us   |          }
+ 52) + 21.909 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.531 us    |          free_pcp_prepare();
+ 52)   0.529 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.585 us    |        }
+ 52) + 27.012 us   |      }
+ 52) + 28.030 us   |    }
+ 52)   0.522 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.511 us    |      rcu_all_qs();
+ 52)   1.516 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.504 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.576 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.534 us    |                propagate_protected_usage();
+ 52)   1.544 us    |              }
+ 52)   8.659 us    |            }
+ 52)   0.506 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.516 us    |              cgroup_rstat_updated();
+ 52)   1.549 us    |            }
+ 52)   0.559 us    |            memcg_check_events();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52) + 14.800 us   |          }
+ 52) + 21.889 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.525 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.584 us    |        }
+ 52) + 27.241 us   |      }
+ 52) + 28.375 us   |    }
+ 52)   0.516 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.507 us    |      rcu_all_qs();
+ 52)   1.513 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.519 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.568 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.516 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.534 us    |                propagate_protected_usage();
+ 52)   1.554 us    |              }
+ 52)   8.672 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.551 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52) + 14.786 us   |          }
+ 52) + 21.864 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.529 us    |          free_pcp_prepare();
+ 52)   0.530 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.640 us    |        }
+ 52) + 27.020 us   |      }
+ 52) + 28.033 us   |    }
+ 52)   0.520 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.737 us    |      rcu_all_qs();
+ 52)   1.745 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   5.578 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.516 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.550 us    |              }
+ 52)   8.666 us    |            }
+ 52)   0.507 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.516 us    |              cgroup_rstat_updated();
+ 52)   1.552 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.760 us   |          }
+ 52) + 21.850 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.529 us    |          free_pcp_prepare();
+ 52)   0.530 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.586 us    |        }
+ 52) + 26.933 us   |      }
+ 52) + 28.062 us   |    }
+ 52)   0.522 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.505 us    |      rcu_all_qs();
+ 52)   1.516 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.520 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.574 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.539 us    |                propagate_protected_usage();
+ 52)   1.557 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.554 us    |              }
+ 52)   8.693 us    |            }
+ 52)   0.508 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.516 us    |              cgroup_rstat_updated();
+ 52)   1.549 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.807 us   |          }
+ 52) + 21.895 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.528 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.586 us    |        }
+ 52) + 26.996 us   |      }
+ 52) + 28.012 us   |    }
+ 52)   0.522 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.511 us    |      rcu_all_qs();
+ 52)   1.515 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.519 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.623 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.535 us    |                propagate_protected_usage();
+ 52)   1.551 us    |              }
+ 52)   8.667 us    |            }
+ 52)   0.507 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.552 us    |            }
+ 52)   0.507 us    |            memcg_check_events();
+ 52)   0.504 us    |            rcu_read_unlock_strict();
+ 52) + 14.758 us   |          }
+ 52) + 21.891 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.556 us    |          free_pcp_prepare();
+ 52)   0.514 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.613 us    |        }
+ 52) + 27.003 us   |      }
+ 52) + 28.133 us   |    }
+ 52)   0.520 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.507 us    |      rcu_all_qs();
+ 52)   1.520 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.519 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   5.574 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.517 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.535 us    |                propagate_protected_usage();
+ 52)   1.550 us    |              }
+ 52)   8.724 us    |            }
+ 52)   0.504 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.512 us    |              cgroup_rstat_updated();
+ 52)   1.554 us    |            }
+ 52)   0.505 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.838 us   |          }
+ 52) + 21.924 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.795 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.875 us    |        }
+ 52) + 27.320 us   |      }
+ 52) + 28.333 us   |    }
+ 52)   0.519 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.509 us    |      rcu_all_qs();
+ 52)   1.519 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.520 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.579 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.512 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.513 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.536 us    |                propagate_protected_usage();
+ 52)   1.604 us    |              }
+ 52)   8.721 us    |            }
+ 52)   0.508 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.515 us    |              cgroup_rstat_updated();
+ 52)   1.549 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52) + 14.812 us   |          }
+ 52) + 21.901 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.516 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.589 us    |        }
+ 52) + 26.987 us   |      }
+ 52) + 28.111 us   |    }
+ 52)   0.518 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.515 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.520 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.506 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   5.573 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.534 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.514 us    |                propagate_protected_usage();
+ 52)   1.529 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.551 us    |              }
+ 52)   8.667 us    |            }
+ 52)   0.508 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.517 us    |              cgroup_rstat_updated();
+ 52)   1.607 us    |            }
+ 52)   0.510 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.815 us   |          }
+ 52) + 21.898 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.527 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.586 us    |        }
+ 52) + 27.290 us   |      }
+ 52) + 28.307 us   |    }
+ 52)   0.520 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.507 us    |      rcu_all_qs();
+ 52)   1.517 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.521 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   0.512 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   5.567 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.543 us    |                propagate_protected_usage();
+ 52)   1.556 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.516 us    |                propagate_protected_usage();
+ 52)   1.530 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.537 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.535 us    |                propagate_protected_usage();
+ 52)   1.551 us    |              }
+ 52)   8.694 us    |            }
+ 52)   0.508 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.517 us    |              cgroup_rstat_updated();
+ 52)   1.551 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52) + 14.789 us   |          }
+ 52) + 21.867 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.531 us    |          free_pcp_prepare();
+ 52)   0.516 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.646 us    |        }
+ 52) + 27.010 us   |      }
+ 52) + 28.134 us   |    }
+ 52)   0.536 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.508 us    |      rcu_all_qs();
+ 52)   1.514 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.518 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   5.574 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.511 us    |                propagate_protected_usage();
+ 52)   1.537 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.517 us    |                propagate_protected_usage();
+ 52)   1.531 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.533 us    |                propagate_protected_usage();
+ 52)   1.550 us    |              }
+ 52)   8.669 us    |            }
+ 52)   0.505 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.519 us    |              cgroup_rstat_updated();
+ 52)   1.548 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.507 us    |            rcu_read_unlock_strict();
+ 52) + 15.095 us   |          }
+ 52) + 22.179 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.528 us    |          free_pcp_prepare();
+ 52)   0.529 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.583 us    |        }
+ 52) + 27.281 us   |      }
+ 52) + 28.292 us   |    }
+ 52)   0.521 us    |    _raw_spin_lock_irq();
+ 52)               |    __cond_resched() {
+ 52)   0.505 us    |      rcu_all_qs();
+ 52)   1.516 us    |    }
+ 52)               |    anon_pipe_buf_release() {
+ 52)               |      __put_page() {
+ 52)   0.574 us    |        __page_cache_release();
+ 52)               |        __mem_cgroup_uncharge() {
+ 52)               |          uncharge_page() {
+ 52)   0.509 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.508 us    |            rcu_read_unlock_strict();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52)   0.510 us    |            rcu_read_unlock_strict();
+ 52)   5.580 us    |          }
+ 52)               |          uncharge_batch() {
+ 52)               |            page_counter_uncharge() {
+ 52)               |              page_counter_cancel() {
+ 52)   0.518 us    |                propagate_protected_usage();
+ 52)   1.532 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.515 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.517 us    |                propagate_protected_usage();
+ 52)   1.533 us    |              }
+ 52)               |              page_counter_cancel() {
+ 52)   0.532 us    |                propagate_protected_usage();
+ 52)   1.551 us    |              }
+ 52)   8.673 us    |            }
+ 52)   0.508 us    |            do_memsw_account();
+ 52)               |            __count_memcg_events() {
+ 52)   0.514 us    |              cgroup_rstat_updated();
+ 52)   1.550 us    |            }
+ 52)   0.508 us    |            memcg_check_events();
+ 52)   0.511 us    |            rcu_read_unlock_strict();
+ 52) + 14.763 us   |          }
+ 52) + 21.855 us   |        }
+ 52)               |        free_unref_page() {
+ 52)   0.553 us    |          free_pcp_prepare();
+ 52)   0.516 us    |          free_unref_page_commit.constprop.0();
+ 52)   2.616 us    |        }
+ 52) + 27.021 us   |      }
+ 52) + 28.148 us   |    }
+ 52)   0.519 us    |    _raw_spin_lock_irq();
+ 52)   0.523 us    |    mutex_unlock();
+ 52)               |    __wake_up_sync_key() {
+ 52)               |      __wake_up_common_lock() {
+ 52)   0.522 us    |        _raw_spin_lock_irqsave();
+ 52)   0.521 us    |        __wake_up_common();
+ 52)   0.508 us    |        _raw_spin_unlock_irqrestore();
+ 52)   3.572 us    |      }
+ 52)   4.571 us    |    }
+ 52)   0.505 us    |    kill_fasync();
+ 52)               |    touch_atime() {
+ 52)               |      atime_needs_update() {
+ 52)   0.525 us    |        ktime_get_coarse_real_ts64();
+ 52)   0.564 us    |        timestamp_truncate();
+ 52)   2.630 us    |      }
+ 52)   3.642 us    |    }
+ 52) ! 645.284 us  |  }
+ 52)               |  pipe_release() {
+ 52)               |    mutex_lock() {
+ 52)               |      __cond_resched() {
+ 52)   0.520 us    |        rcu_all_qs();
+ 52)   1.579 us    |      }
+ 52)   2.690 us    |    }
+ 52)               |    __wake_up() {
+ 52)               |      __wake_up_common_lock() {
+ 52)   0.547 us    |        _raw_spin_lock_irqsave();
+ 52)   0.525 us    |        __wake_up_common();
+ 52)   0.512 us    |        _raw_spin_unlock_irqrestore();
+ 52)   3.623 us    |      }
+ 52)   4.654 us    |    }
+ 52)               |    __wake_up() {
+ 52)               |      __wake_up_common_lock() {
+ 52)   0.854 us    |        _raw_spin_lock_irqsave();
+ 52)   0.521 us    |        __wake_up_common();
+ 52)   0.510 us    |        _raw_spin_unlock_irqrestore();
+ 52)   3.921 us    |      }
+ 52)   4.926 us    |    }
+ 52)   0.505 us    |    kill_fasync();
+ 52)   0.508 us    |    kill_fasync();
+ 52)   0.511 us    |    mutex_unlock();
+ 52)   0.550 us    |    _raw_spin_lock();
+ 52) + 18.560 us   |  }

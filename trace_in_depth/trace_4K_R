@@ -1,0 +1,153 @@
+# tracer: function_graph
+#
+# CPU  DURATION                  FUNCTION CALLS
+# |     |   |                     |   |   |   |
+ 14)               |  pipe_read() {
+ 14)               |    mutex_lock() {
+ 14)               |      __cond_resched() {
+ 14)   0.242 us    |        rcu_all_qs();
+ 14)   0.757 us    |      }
+ 14)   1.416 us    |    }
+ 14)               |    __cond_resched() {
+ 14)   0.206 us    |      rcu_all_qs();
+ 14)   0.647 us    |    }
+ 14)   0.284 us    |    anon_pipe_buf_release();
+ 14)   0.255 us    |    _raw_spin_lock_irq();
+ 14)   0.220 us    |    mutex_unlock();
+ 14)   0.210 us    |    kill_fasync();
+ 14)               |    touch_atime() {
+ 14)               |      atime_needs_update() {
+ 14)   0.222 us    |        ktime_get_coarse_real_ts64();
+ 14)   0.249 us    |        timestamp_truncate();
+ 14)   1.241 us    |      }
+ 14)   0.283 us    |      __mnt_want_write();
+ 14)   0.218 us    |      ktime_get_coarse_real_ts64();
+ 14)   0.218 us    |      timestamp_truncate();
+ 14)   0.295 us    |      __mark_inode_dirty();
+ 14)   0.213 us    |      __mnt_drop_write();
+ 14)   4.038 us    |    }
+ 14) + 10.490 us   |  }
+ 14)               |  pipe_read() {
+ 14)               |    mutex_lock() {
+ 14)               |      __cond_resched() {
+ 14)   0.231 us    |        rcu_all_qs();
+ 14)   0.682 us    |      }
+ 14)               |      __mutex_lock_slowpath() {
+ 14)               |        __mutex_lock.constprop.0() {
+ 14)               |          __cond_resched() {
+ 14)   0.211 us    |            rcu_all_qs();
+ 14)   0.632 us    |          }
+ 14)   0.211 us    |          rcu_read_unlock_strict();
+ 14)   0.417 us    |          osq_lock();
+ 14)   0.218 us    |          osq_unlock();
+ 14)   2.889 us    |        }
+ 14)   3.328 us    |      }
+ 14)   4.736 us    |    }
+ 14)               |    __cond_resched() {
+ 14)   0.211 us    |      rcu_all_qs();
+ 14)   0.622 us    |    }
+ 14)   0.203 us    |    anon_pipe_buf_release();
+ 14)   0.257 us    |    _raw_spin_lock_irq();
+ 14)   0.215 us    |    mutex_unlock();
+ 14)   0.273 us    |    kill_fasync();
+ 14)               |    touch_atime() {
+ 14)               |      atime_needs_update() {
+ 14)   0.218 us    |        ktime_get_coarse_real_ts64();
+ 14)   0.204 us    |        timestamp_truncate();
+ 14)   1.128 us    |      }
+ 14)   1.595 us    |    }
+ 14) + 10.606 us   |  }
+ 14)               |  pipe_read() {
+ 14)               |    mutex_lock() {
+ 14)               |      __cond_resched() {
+ 14)   0.216 us    |        rcu_all_qs();
+ 14)   0.646 us    |      }
+ 14)               |      __mutex_lock_slowpath() {
+ 14)               |        __mutex_lock.constprop.0() {
+ 14)               |          __cond_resched() {
+ 14)   0.221 us    |            rcu_all_qs();
+ 14)   0.651 us    |          }
+ 14)   0.280 us    |          rcu_read_unlock_strict();
+ 14)   0.263 us    |          osq_lock();
+ 14)   0.204 us    |          osq_unlock();
+ 14)   2.555 us    |        }
+ 14)   2.965 us    |      }
+ 14)   4.286 us    |    }
+ 14)               |    __cond_resched() {
+ 14)   0.212 us    |      rcu_all_qs();
+ 14)   0.622 us    |    }
+ 14)   0.213 us    |    anon_pipe_buf_release();
+ 14)   0.274 us    |    _raw_spin_lock_irq();
+ 14)   0.217 us    |    mutex_unlock();
+ 14)   0.211 us    |    kill_fasync();
+ 14)               |    touch_atime() {
+ 14)               |      atime_needs_update() {
+ 14)   0.216 us    |        ktime_get_coarse_real_ts64();
+ 14)   0.214 us    |        timestamp_truncate();
+ 14)   1.070 us    |      }
+ 14)   1.489 us    |    }
+ 14) + 10.234 us   |  }
+ 14)               |  pipe_read() {
+ 14)               |    mutex_lock() {
+ 14)               |      __cond_resched() {
+ 14)   0.238 us    |        rcu_all_qs();
+ 14)   0.697 us    |      }
+ 14)   1.175 us    |    }
+ 14)   0.258 us    |    mutex_unlock();
+ 14)   0.213 us    |    kill_fasync();
+ 14)               |    __cond_resched() {
+ 14)   0.259 us    |      rcu_all_qs();
+ 14)   0.662 us    |    }
+ 14)   0.213 us    |    init_wait_entry();
+ 14)               |    prepare_to_wait_event() {
+ 14)   0.269 us    |      _raw_spin_lock_irqsave();
+ 14)   0.239 us    |      _raw_spin_unlock_irqrestore();
+ 14)   1.195 us    |    }
+ 14)               |    finish_wait() {
+ 14)   0.270 us    |      _raw_spin_lock_irqsave();
+ 14)   0.223 us    |      _raw_spin_unlock_irqrestore();
+ 14)   1.178 us    |    }
+ 14)               |    mutex_lock() {
+ 14)               |      __cond_resched() {
+ 14)   0.211 us    |        rcu_all_qs();
+ 14)   0.633 us    |      }
+ 14)   1.111 us    |    }
+ 14)               |    __cond_resched() {
+ 14)   0.213 us    |      rcu_all_qs();
+ 14)   0.624 us    |    }
+ 14)   0.215 us    |    anon_pipe_buf_release();
+ 14)   0.216 us    |    _raw_spin_lock_irq();
+ 14)   0.219 us    |    mutex_unlock();
+ 14)   0.213 us    |    kill_fasync();
+ 14)               |    touch_atime() {
+ 14)               |      atime_needs_update() {
+ 14)   0.215 us    |        ktime_get_coarse_real_ts64();
+ 14)   0.225 us    |        timestamp_truncate();
+ 14)   1.088 us    |      }
+ 14)   1.509 us    |    }
+ 14) + 13.162 us   |  }
+ 14)               |  pipe_release() {
+ 14)               |    mutex_lock() {
+ 14)               |      __cond_resched() {
+ 14)   0.216 us    |        rcu_all_qs();
+ 14)   0.659 us    |      }
+ 14)   1.098 us    |    }
+ 14)               |    __wake_up() {
+ 14)               |      __wake_up_common_lock() {
+ 14)   0.221 us    |        _raw_spin_lock_irqsave();
+ 14)   0.248 us    |        __wake_up_common();
+ 14)   0.231 us    |        _raw_spin_unlock_irqrestore();
+ 14)   1.592 us    |      }
+ 14)   2.031 us    |    }
+ 14)               |    __wake_up() {
+ 14)               |      __wake_up_common_lock() {
+ 14)   0.216 us    |        _raw_spin_lock_irqsave();
+ 14)   0.216 us    |        __wake_up_common();
+ 14)   0.222 us    |        _raw_spin_unlock_irqrestore();
+ 14)   1.505 us    |      }
+ 14)   1.936 us    |    }
+ 14)   0.212 us    |    kill_fasync();
+ 14)   0.212 us    |    kill_fasync();
+ 14)   0.214 us    |    mutex_unlock();
+ 14)   0.258 us    |    _raw_spin_lock();
+ 14)   7.723 us    |  }
