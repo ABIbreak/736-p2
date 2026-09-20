@@ -1,0 +1,280 @@
+# tracer: function_graph
+#
+# CPU  DURATION                  FUNCTION CALLS
+# |     |   |                     |   |   |   |
+ 44)               |  /* sys_write -> 0x2 */
+ 44)               |  /* sched_wakeup_new: comm=bash pid=17792 prio=120 target_cpu=046 */
+ 46)               |  /* sched_switch: prev_comm=swapper/46 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=bash next_pid=17792 next_prio=120 */
+ 44)               |  /* sched_switch: prev_comm=bash prev_pid=17791 prev_prio=120 prev_state=S ==> next_comm=swapper/44 next_pid=0 next_prio=120 */
+ ------------------------------------------
+ 46)    <idle>-0    =>    p2-17792   
+ ------------------------------------------
+
+ 46)               |  /* sys_read(fd: 3, buf: 7ffdffa505e8, count: 340) */
+ 46)               |  /* sys_read -> 0x340 */
+ 46)               |  /* sys_read(fd: 3, buf: 7ffdffa505c8, count: 340) */
+ 46)               |  /* sys_read -> 0x340 */
+ ------------------------------------------
+ 44)   bash-17791   =>    <idle>-0   
+ ------------------------------------------
+
+ 44)               |  /* sched_waking: comm=rcu_sched pid=15 prio=120 target_cpu=005 */
+  5)               |  /* sched_wakeup: comm=rcu_sched pid=15 prio=120 target_cpu=005 */
+  5)               |  /* sched_switch: prev_comm=swapper/5 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=15 next_prio=120 */
+ ------------------------------------------
+  5)    <idle>-0    =>   rcu_sch-15  
+ ------------------------------------------
+
+  5)               |  /* sched_switch: prev_comm=rcu_sched prev_pid=15 prev_prio=120 prev_state=I ==> next_comm=swapper/5 next_pid=0 next_prio=120 */
+ 46)               |  /* sys_read(fd: 3, buf: 55e9dc6c3500, count: 400) */
+ 46)               |  /* sys_read -> 0x400 */
+ 46)               |  /* sys_read(fd: 3, buf: 55e9dc6c3500, count: 400) */
+ 46)               |  /* sys_read -> 0x400 */
+ 46)               |  /* sys_read(fd: 3, buf: 55e9dc6c3500, count: 400) */
+ 46)               |  /* sys_read -> 0x318 */
+ 46)               |  __x64_sys_pipe2() {
+ 46)               |    do_pipe2() {
+ 46)               |      create_pipe_files() {
+ 46)   1.383 us    |        alloc_pipe_info();
+ 46)   5.043 us    |      }
+ 46)   0.468 us    |      __do_pipe_flags.part.0();
+ 46)   6.348 us    |    }
+ 46)   7.339 us    |  }
+ 46)               |  /* sched_wakeup_new: comm=p2 pid=17793 prio=120 target_cpu=048 */
+ 48)               |  /* sched_switch: prev_comm=swapper/48 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=p2 next_pid=17793 next_prio=120 */
+ 46)               |  /* sys_write(fd: 1, buf: 55e9dc6c3500, count: 14) */
+ 46)               |  /* sched_waking: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+ 46)               |  /* sys_write -> 0x14 */
+ 46)               |  /* sys_write(fd: 1, buf: 55e9dc6c3500, count: 13) */
+ 46)               |  /* sys_write -> 0x13 */
+  2)               |  /* sched_wakeup: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+  2)               |  /* sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u129:2 next_pid=17132 next_prio=120 */
+ ------------------------------------------
+  2)    <idle>-0    => kworker-17132 
+ ------------------------------------------
+
+  2)               |  /* sched_waking: comm=sudo pid=17789 prio=120 target_cpu=008 */
+  2)               |  /* sched_switch: prev_comm=kworker/u129:2 prev_pid=17132 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120 */
+  8)               |  /* sched_wakeup: comm=sudo pid=17789 prio=120 target_cpu=008 */
+  8)               |  /* sched_switch: prev_comm=swapper/8 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sudo next_pid=17789 next_prio=120 */
+ ------------------------------------------
+  8)    <idle>-0    =>   sudo-17789  
+ ------------------------------------------
+
+  8)   0.488 us    |  pipe_poll();
+  8)               |  /* sys_read(fd: 9, buf: 55bfb9f4f530, count: 10000) */
+ 46)               |  /* sys_write(fd: 4, buf: 55e9da2a60bb, count: 4) */
+ 46)   1.988 us    |  pipe_write();
+ 46)               |  /* sys_write -> 0x4 */
+  8)               |  /* sys_read -> 0x29 */
+  8)   0.305 us    |  pipe_poll();
+  8)               |  /* sys_write(fd: 8, buf: 55bfb9f4f530, count: 29) */
+  8)               |  /* sched_waking: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+  8)               |  /* sys_write -> 0x29 */
+  8)   0.331 us    |  pipe_poll();
+ ------------------------------------------
+  2) kworker-17132  =>    <idle>-0   
+ ------------------------------------------
+
+  2)               |  /* sched_wakeup: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+  2)               |  /* sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u129:2 next_pid=17132 next_prio=120 */
+  8)               |  /* sched_switch: prev_comm=sudo prev_pid=17789 prev_prio=120 prev_state=S ==> next_comm=swapper/8 next_pid=0 next_prio=120 */
+ ------------------------------------------
+  2)    <idle>-0    => kworker-17132 
+ ------------------------------------------
+
+  2)               |  /* sched_waking: comm=sshd pid=4506 prio=120 target_cpu=054 */
+  2)               |  /* sched_switch: prev_comm=kworker/u129:2 prev_pid=17132 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120 */
+ 54)               |  /* sched_wakeup: comm=sshd pid=4506 prio=120 target_cpu=054 */
+ 54)               |  /* sched_switch: prev_comm=swapper/54 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sshd next_pid=4506 next_prio=120 */
+ ------------------------------------------
+ 54)    <idle>-0    =>   sshd-4506   
+ ------------------------------------------
+
+ 54)               |  /* sys_read(fd: a, buf: 7f04fa682010, count: 8000) */
+ 54)               |  /* sys_read -> 0x29 */
+ 54)               |  /* sys_write(fd: 4, buf: 5600fabc1c10, count: 4c) */
+ 54)               |  /* sys_write -> 0x4c */
+ 54)               |  /* sched_switch: prev_comm=sshd prev_pid=4506 prev_prio=120 prev_state=S ==> next_comm=swapper/54 next_pid=0 next_prio=120 */
+ ------------------------------------------
+ 48)    <idle>-0    =>    p2-17793   
+ ------------------------------------------
+
+ 48)               |  /* sys_read(fd: 3, buf: 55e9dc6c4d60, count: 4) */
+ 48)               |  pipe_read() {
+ 48)   0.643 us    |    anon_pipe_buf_release();
+ 48)   4.269 us    |  }
+ 48)               |  /* sys_read -> 0x4 */
+ 46)               |  /* sys_write(fd: 4, buf: 55e9da2a60bb, count: 4) */
+ 46)   0.549 us    |  pipe_write();
+ 46)               |  /* sys_write -> 0x4 */
+ 48)               |  /* sys_read(fd: 3, buf: 55e9dc6c4d60, count: 4) */
+ 48)               |  pipe_read() {
+ 48)   0.587 us    |    anon_pipe_buf_release();
+ 48)   2.249 us    |  }
+ 48)               |  /* sys_read -> 0x4 */
+ 46)               |  /* sys_write(fd: 4, buf: 55e9da2a60bb, count: 4) */
+ 48)               |  /* sys_read(fd: 3, buf: 55e9dc6c4d60, count: 4) */
+ 46)   0.576 us    |  pipe_write();
+ 46)               |  /* sys_write -> 0x4 */
+ 48)               |  pipe_read() {
+ 48)   0.526 us    |    anon_pipe_buf_release();
+ 48)   2.104 us    |  }
+ 48)               |  /* sys_read -> 0x4 */
+ 46)               |  /* sys_write(fd: 4, buf: 55e9da2a60bb, count: 4) */
+ 46)   0.633 us    |  pipe_write();
+ 48)               |  /* sys_read(fd: 3, buf: 55e9dc6c4d60, count: 4) */
+ 46)               |  /* sys_write -> 0x4 */
+ 48)               |  pipe_read() {
+ 48)   0.525 us    |    anon_pipe_buf_release();
+ 48)   2.168 us    |  }
+ 48)               |  /* sys_read -> 0x4 */
+ 46)               |  /* sys_write(fd: 1, buf: 55e9dc6c3500, count: 12) */
+ 46)               |  /* sched_waking: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+ 46)               |  /* sys_write -> 0x12 */
+ 46)               |  /* sys_write(fd: 1, buf: 55e9dc6c3500, count: 12) */
+ 46)               |  /* sys_write -> 0x12 */
+ ------------------------------------------
+  2) kworker-17132  =>    <idle>-0   
+ ------------------------------------------
+
+  2)               |  /* sched_wakeup: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+  2)               |  /* sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u129:2 next_pid=17132 next_prio=120 */
+ 46)               |  /* sys_write(fd: 1, buf: 55e9dc6c3500, count: 12) */
+ 46)               |  /* sys_write -> 0x12 */
+ ------------------------------------------
+  2)    <idle>-0    => kworker-17132 
+ ------------------------------------------
+
+  2)               |  /* sched_waking: comm=sudo pid=17789 prio=120 target_cpu=008 */
+  2)               |  /* sched_switch: prev_comm=kworker/u129:2 prev_pid=17132 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120 */
+ 46)               |  /* sys_write(fd: 1, buf: 55e9dc6c3500, count: 16) */
+ ------------------------------------------
+  8)   sudo-17789   =>    <idle>-0   
+ ------------------------------------------
+
+  8)               |  /* sched_wakeup: comm=sudo pid=17789 prio=120 target_cpu=008 */
+  8)               |  /* sched_switch: prev_comm=swapper/8 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sudo next_pid=17789 next_prio=120 */
+ 46)               |  /* sched_waking: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+ 48)   1.192 us    |  pipe_release();
+ ------------------------------------------
+  8)    <idle>-0    =>   sudo-17789  
+ ------------------------------------------
+
+  8)   0.297 us    |  pipe_poll();
+ 46)               |  /* sys_write -> 0x16 */
+ 46)               |  pipe_release() {
+ ------------------------------------------
+  2) kworker-17132  =>    <idle>-0   
+ ------------------------------------------
+
+  2)               |  /* sched_wakeup: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+ 46)   1.398 us    |    free_pipe_info();
+  8)               |  /* sys_read(fd: 9, buf: 55bfb9f4f530, count: 10000) */
+  2)               |  /* sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u129:2 next_pid=17132 next_prio=120 */
+ 46)   2.044 us    |  }
+  8)               |  /* sys_read -> 0x39 */
+ ------------------------------------------
+  2)    <idle>-0    => kworker-17132 
+ ------------------------------------------
+
+  2)               |  /* sched_switch: prev_comm=kworker/u129:2 prev_pid=17132 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120 */
+  8)   0.297 us    |  pipe_poll();
+  8)               |  /* sys_write(fd: 8, buf: 55bfb9f4f530, count: 39) */
+  8)               |  /* sched_waking: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+  8)               |  /* sys_write -> 0x39 */
+  8)               |  /* sys_read(fd: 9, buf: 55bfb9f4f530, count: 10000) */
+ ------------------------------------------
+  2) kworker-17132  =>    <idle>-0   
+ ------------------------------------------
+
+  2)               |  /* sched_wakeup: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+  8)               |  /* sys_read -> 0x17 */
+  2)               |  /* sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u129:2 next_pid=17132 next_prio=120 */
+ ------------------------------------------
+  2)    <idle>-0    => kworker-17132 
+ ------------------------------------------
+
+  2)               |  /* sched_waking: comm=sshd pid=4506 prio=120 target_cpu=054 */
+  8)   0.296 us    |  pipe_poll();
+  2)               |  /* sched_switch: prev_comm=kworker/u129:2 prev_pid=17132 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120 */
+ ------------------------------------------
+ 54)   sshd-4506    =>    <idle>-0   
+ ------------------------------------------
+
+ 54)               |  /* sched_wakeup: comm=sshd pid=4506 prio=120 target_cpu=054 */
+  8)               |  /* sys_write(fd: 8, buf: 55bfb9f4f530, count: 17) */
+  8)               |  /* sched_waking: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+ 54)               |  /* sched_switch: prev_comm=swapper/54 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sshd next_pid=4506 next_prio=120 */
+  8)               |  /* sys_write -> 0x17 */
+  8)   0.294 us    |  pipe_poll();
+ ------------------------------------------
+  2) kworker-17132  =>    <idle>-0   
+ ------------------------------------------
+
+  2)               |  /* sched_wakeup: comm=kworker/u129:2 pid=17132 prio=120 target_cpu=002 */
+  8)               |  /* sched_switch: prev_comm=sudo prev_pid=17789 prev_prio=120 prev_state=S ==> next_comm=swapper/8 next_pid=0 next_prio=120 */
+  2)               |  /* sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u129:2 next_pid=17132 next_prio=120 */
+ ------------------------------------------
+  2)    <idle>-0    => kworker-17132 
+ ------------------------------------------
+
+  2)               |  /* sched_switch: prev_comm=kworker/u129:2 prev_pid=17132 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120 */
+ ------------------------------------------
+ 54)    <idle>-0    =>   sshd-4506   
+ ------------------------------------------
+
+ 54)               |  /* sys_read(fd: a, buf: 7f04fa682010, count: 8000) */
+ 54)               |  /* sys_read -> 0x50 */
+ 54)               |  /* sys_write(fd: 4, buf: 5600fabc1c10, count: 74) */
+ 54)               |  /* sys_write -> 0x74 */
+ 54)               |  /* sched_switch: prev_comm=sshd prev_pid=4506 prev_prio=120 prev_state=S ==> next_comm=swapper/54 next_pid=0 next_prio=120 */
+ 46)               |  /* sched_waking: comm=bash pid=17791 prio=120 target_cpu=044 */
+ 46)               |  /* sched_switch: prev_comm=p2 prev_pid=17792 prev_prio=120 prev_state=Z ==> next_comm=swapper/46 next_pid=0 next_prio=120 */
+ 44)               |  /* sched_wakeup: comm=bash pid=17791 prio=120 target_cpu=044 */
+ 44)               |  /* sched_switch: prev_comm=swapper/44 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=bash next_pid=17791 next_prio=120 */
+ ------------------------------------------
+ 44)    <idle>-0    =>   bash-17791  
+ ------------------------------------------
+
+ 44)               |  /* sys_read(fd: 3, buf: 7ffe618b73a0, count: 8000) */
+ 44)               |  /* sys_read -> 0xf0c */
+ 44)               |  /* sys_read(fd: 3, buf: 7ffe618b82ac, count: 7000) */
+ 44)               |  /* sys_read -> 0x0 */
+ 48)               |  /* sched_waking: comm=systemd pid=1 prio=120 target_cpu=056 */
+ 48)               |  /* sched_switch: prev_comm=p2 prev_pid=17793 prev_prio=120 prev_state=Z ==> next_comm=swapper/48 next_pid=0 next_prio=120 */
+ 56)               |  /* sched_wakeup: comm=systemd pid=1 prio=120 target_cpu=056 */
+ 56)               |  /* sched_switch: prev_comm=swapper/56 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=systemd next_pid=1 next_prio=120 */
+ ------------------------------------------
+ 48)    p2-17793    =>    <idle>-0   
+ ------------------------------------------
+
+ 48)               |  /* sched_waking: comm=kworker/48:2 pid=602 prio=120 target_cpu=048 */
+ 48)               |  /* sched_wakeup: comm=kworker/48:2 pid=602 prio=120 target_cpu=048 */
+ 48)               |  /* sched_switch: prev_comm=swapper/48 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/48:2 next_pid=602 next_prio=120 */
+ ------------------------------------------
+ 56)    <idle>-0    =>   systemd-1   
+ ------------------------------------------
+
+ 56)               |  /* sys_read(fd: 5, buf: 7ffda38a5820, count: 80) */
+ 56)               |  /* sys_read -> 0x80 */
+ ------------------------------------------
+ 48)    <idle>-0    =>  kworker-602  
+ ------------------------------------------
+
+ 48)               |  /* sched_switch: prev_comm=kworker/48:2 prev_pid=602 prev_prio=120 prev_state=I ==> next_comm=swapper/48 next_pid=0 next_prio=120 */
+ 56)               |  /* sys_read(fd: 16, buf: 557a1314d630, count: 400) */
+ 56)               |  /* sys_read -> 0x3 */
+ 56)               |  /* sys_read(fd: 16, buf: 557a1314d630, count: 400) */
+ 56)               |  /* sys_read -> 0x0 */
+ 56)               |  /* sys_read(fd: 16, buf: 557a1314d630, count: 400) */
+ 56)               |  /* sys_read -> 0x3 */
+ 56)               |  /* sys_read(fd: 16, buf: 557a1314d630, count: 400) */
+ 56)               |  /* sys_read -> 0x0 */
+ 56)               |  /* sys_read(fd: 16, buf: 557a1314d630, count: 400) */
+ 56)               |  /* sys_read -> 0x31 */
+ 44)               |  /* sys_read(fd: ff, buf: 559379d29030, count: 221) */
+ 44)               |  /* sys_read -> 0x4e */
+ 56)               |  /* sys_read(fd: 16, buf: 557a1314d630, count: 400) */
+ 56)               |  /* sys_read -> 0x0 */
+ 44)               |  /* sys_write(fd: 1, buf: 559379d2b2d0, count: 2) */
