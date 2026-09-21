@@ -4,9 +4,9 @@ This repository accompanies the submission for CS736-P2 and provides associated 
 
 ## System Information
 
-CPU : Intel(R) Xeon(R) Gold 6142 CPU @ 2.60GHz
-MEM : DDR4 @ 2666 MHz
-OS  : Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-187-generic x86_64)
+- CPU : Intel(R) Xeon(R) Gold 6142 CPU @ 2.60GHz
+- MEM : DDR4 @ 2666 MHz
+- OS  : Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-187-generic x86_64)
 
 ## Organization
 
