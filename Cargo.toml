@@ -2,8 +2,14 @@
 name = "p2"
 version = "0.1.0"
 edition = "2024"
+default-run = "p2"
 
 [dependencies]
 clap = { version = "4.6.7", features = ["derive"] }
 nix = { version = "0.31.3", features = ["mman", "process", "sched"] }
 perfetto-sdk = "1"
+
+[[bin]]
+name = "instant_resolution"
+test = false
+bench = false
